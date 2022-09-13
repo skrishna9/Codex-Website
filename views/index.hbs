@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+  {{>navbar data=detalis}}
+
+  {{>slider slides=slides}}
+
+
+  {{!--this banner 1 section --}}
+  <section class="banner1_section py-6" style="background-color: rgb(121, 121, 124);">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Start learning new technology here !!</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni quasi, minima totam aut ex quia.
+            Eveniet voluptatem porro animi officia sed labore, aperiam adipisci, amet magni voluptatibus dolores magnam!
+          </p>
+          <button class="btn-outline-primary" style="background-color: green;">Start Learning</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+  {{!-- services section --}}
+
+  <section id="services_section " class="py-3">
+
+    <div class="container">
+      <h1 class="text-center text-secondary">Services that we provide </h1>
+
+      <div class="row mt-5">
+
+        {{!-- first service column --}}
+        {{#each services}}
+        <div class="col-md-4">
+
+          <div class="card-body">
+            <div class="container text center ">
+              <i class="{{this.icon}} service_icon text-secondary " style="font-size: 90px;"></i>
+            </div>
+
+            <h3 class="card-title">{{this.title}}</h3>
+            <p>{{this.description}}</p>
+
+            <a href="{{this.linkText}}">{{this.link}}</a>
+            <a href="#!" class="ml-3">Support</a>
+          </div>
+
+        </div>
+        {{/each}}
+      </div>
+
+
+    </div>
+
+  </section>
+
+  {{!-- this is banner 2 section --}}
+
+  <section class="banner2_section py-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text center pt-5">
+          {{!-- left --}}
+          <h3>We work for people , not for money</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, suscipit maxime totam
+            consectetur omnis dignissimos minus quis vel atque natus molestiae odit, quam et? Dolore harum molestiae
+            beatae veniam. Consequatur.
+          </p>
+          <button class="btn btn-primary">Click Here</button>
+        </div>
+        <div class="col-md-6 text-center pt-4">
+          {{!-- right side --}}
+          <img src="/static/images/c1.svg" style="height: 350px;" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{!-- this is banner3 section --}}
+
+  <section class="banner3_section py-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center pt-4">
+          {{!-- Left side --}}
+          <img src="/static/images/c2.svg" class="img-fluid" style="height: 350px;" alt="" />
+        </div>
+
+        <div class="col-md-6 text center pt-5">
+          {{!-- Right Side --}}
+          <h3>We always help</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, suscipit maxime totam
+            consectetur omnis dignissimos minus quis vel atque natus molestiae odit, quam et? Dolore harum molestiae
+            beatae veniam. Consequatur.
+          </p>
+          <button class="btn btn-primary text-center">Click Here</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  {{!-- contact us section --}}
+
+  <section id="contact_us_section" class="py-5 " style="background-color: rgb(186, 163, 189);">
+    <div class="container">
+      <h3 class="text-center text-muted">Contact Us</h3>
+      <div class="row">
+        <div class="col-md-12">
+          <form action="/process-contact-form" method="post">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+              <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+
+            <div class="mb-3">
+              <label for="contact number" class="form-label">Your Contact Number</label>
+              <input name="contact_number" type="number" class="form-control" id="contact number">
+            </div>
+
+            <div class="form-floating mt-2">
+              <textarea name="query" style="height: 250px;" class="form-control" placeholder="Enter Your Query Here"
+                id="queryField"></textarea>
+              <label for="queryField">Your Query</label>
+            </div>
+
+            <div class="container text-center">
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {{!-- this is about section --}}
+  <section class="about_section py-5" id="about_section">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md--12">
+          <h3>About This Site</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Tempora, atque dolores corporis dicta reiciendis sequi, omnis eveniet animi recusandae
+            similique architecto, totam ipsum delectus quaerat laudantium? Suscipit impedit delectus
+            fugit explicabo tempora magni consequuntur eveniet quam mollitia fuga, error, assumenda beatae blanditiis
+            laudantium minima fugiat dolores maxime aut dignissimos sed libero, pariatur modi! Hic amet est totam quae
+            velit
+            laborum quasi quos, commodi voluptatum. Animi quisquam corporis beatae, eaque rem labore molestiae eveniet
+            eos officiis
+            vero culpa nemo doloremque harum, quam laudantium nisi libero aliquam
+            laboriosam accusantium consectetur ex autem! Quisquam aut ratione quaerat amet fugiat sapiente architecto
+            reprehenderit. Fuga!</p>
+            <button class="btn btn-success" style="background-color: rgb(149, 133, 143);">
+              Contact Us
+            </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer text-center py-5" style="background-color: rgb(162, 162, 237);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+                @ 2022 Copyright: <span>LearnCodeWithKrishna</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
